@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jenkins:
+    image: jenkins:2.7.2-alpine
+    ports:
+      - '9090:8080'
+      - '50500:50000'
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+    environment:
+      JAVA_OPTS: -Duser.timezone=JST
