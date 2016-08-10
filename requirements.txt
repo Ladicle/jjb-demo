@@ -1,0 +1,5 @@
+argparse
+PyYAML
+python-jenkins
+pbr>=0.8.2
+-e git+https://github.com/tamac-io/jenkins-job-builder#egg=jenkins-job-builders.git

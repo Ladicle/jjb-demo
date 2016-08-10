@@ -1,0 +1,15 @@
+- project:
+    name: trigger-project
+    repo:
+      - 'age'
+      - 'hoge'
+      - 'piyo'
+    jobs:
+      - '{repo}-trigger'
+
+- job-template:
+    name: '{repo}-trigger'
+    defaults: default-no-scm
+    builders:
+      - shell: |
+          echo "HELLO WORLD"

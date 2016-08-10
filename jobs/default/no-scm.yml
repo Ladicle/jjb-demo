@@ -1,0 +1,26 @@
+- defaults: &default-no-scm
+    name: default-no-scm
+    description: "Auto build job"
+    disabled: false
+    quiet-period: 0
+    concurrent: true
+    block-downstream: false
+    block-upstream: false
+    node: master
+    properties:
+      - build-discarder: &build-discarder
+          days-to-keep: 14 # 2week
+          artifact-num-to-keep: 2
+      - throttle: &throttle
+          option: project
+          max-total: 0
+      - builds-chain-fingerprinter: &fingerprinter
+          per-builds-chain: true
+          per-job-chain: true
+      - inject:
+          keep-system-variables: true
+          keep-build-variables: true
+    wrappers:
+      - default-wrapper
+    builders:
+      - nop-builder

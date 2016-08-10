@@ -1,0 +1,6 @@
+- builder:
+    name: nop-builder
+    builders:
+      - shell: |
+          #!/bin/bash
+          echo "blank"

@@ -1,0 +1,5 @@
+- publisher:
+    name: nop-publisher
+    publishers:
+      - email:
+          recipients: ''
